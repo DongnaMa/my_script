@@ -25,7 +25,7 @@ while (my $line = <IN>){
      my ($chr,$pos)=split (":",$line);
      my ($start,$end)=split ("-",$pos);
      my $seq = $seq{$chr};
-     my $part = substr($seq,$start, $end-$start); #add +1 or -1 after testing
+     my $part = substr($seq,$start-1, $end-$start+1); #add +1 or -1 after testing
      print OUT ">$line\n$part\n";
 }
 close IN;
